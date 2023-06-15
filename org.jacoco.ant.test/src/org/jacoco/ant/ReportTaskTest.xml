@@ -403,7 +403,11 @@
 				<xml destfile="${temp.dir}/report.xml"/>
 			</jacoco:report>
 		</au:expectfailure>
-		<delete file="${temp.dir}/report.xml"/>
+		<exec executable="cmd">
+          <arg value="/c"/>
+          <arg value="del"/>
+			<arg value="${temp.dir}/report.xml"/>
+		</exec>
 	</target>
 
 	<target name="testReportXmlNoDestfile">
